@@ -37,9 +37,9 @@ if ($sql_search!="")
 	$sql_search = " where ".substr($sql_search,4);
 
 if(!$_SESSION['read_only']){
-        $colspan = 7;
+        $colspan = 8;
 }else{
-        $colspan = 5;
+        $colspan = 6;
 }
 
 ?>
@@ -85,6 +85,7 @@ if(!$_SESSION['read_only']){
 
 <table class="ttable" width="95%" cellspacing="2" cellpadding="2" border="0">
 <tr align="center">
+<th class="listTitle">ID</th>
 <th class="listTitle">Username</th>
 <th class="listTitle">Domain</th>
 <th class="listTitle">Group</th>
@@ -139,6 +140,7 @@ echo('<th class="listTitle">Edit</th>
 		}
 ?>
  <tr>
+  <td class="<?=$row_style?>">&nbsp;<?=$resultset[$i]['id']?></td>
   <td class="<?=$row_style?>">&nbsp;<?=$resultset[$i]['username']?></td>
   <td class="<?=$row_style?>">&nbsp;<?=$resultset[$i]['domain']?></td>
   <td class="<?=$row_style?>">&nbsp;<?=$resultset[$i]['grp']?></td>
